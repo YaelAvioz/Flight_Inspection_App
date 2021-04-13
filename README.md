@@ -52,11 +52,10 @@ Then, we called the method and finally released the file. Calling the method cau
 ##### FlightGear Instructions
 - Download FlightGear 2020.3.6, and make sure that the shortcut of the app is on the Desktop and named "FlightGear 2020.3.6" Make sure you did the whole installation.
 - Add the attached file "playback_small.xml" to "C:\Program Files\FlightGear 2020.3.6\data\Protocol"
-- Add in the FlightGear Settings in "Additional Settings" these three lines: 
+- In order to set up the connection with our program - Add in the FlightGear Settings in "Additional Settings" these three lines: 
 --generic=socket,in,20,127.0.0.1,5400,tcp,playback_small 
 --fdm=null
 --generic=socket,out,20,127.0.0.1,6400,tcp,playback_small
-- In order to set up the connection with our program.
 
 ![FGprops](https://user-images.githubusercontent.com/72969386/114606209-ad897080-9ca3-11eb-8d3e-c43754e8418a.png)
 
