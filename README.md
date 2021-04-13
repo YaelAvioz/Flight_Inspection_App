@@ -16,8 +16,8 @@ In this project, we built a GUI (WPF application), which allows us to track the 
    - After the data, in a separate row the string "Done."
 
    - ##### Examples:
-  ![Input](images/input.png)
-  ![Output](images/output.png)
+  ![Input](Media/input.png)
+  ![Output](Media/output.png)
 
 ### Repositories structure
 - Plugins folder - contains the dll files of the minimal circle and the regression line algorithms
@@ -59,8 +59,8 @@ In order to set up the connection with our program.
 
 
 ### Links
-- ReadMe of the Main classes - MainClassesReadme
-- The video of the program - need to download before watching.
-- Link to the FlightGear site - https://www.flightgear.org/ 
+ReadMe of the Main classes - MainClassesReadme
+The video of the program - need to download before watching.
 ### Video
 Watch With Sound gif of the video
+![](Media/FG_gif.gif)
