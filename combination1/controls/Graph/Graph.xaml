@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="combination1.controls.Graph"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:oxy="http://oxyplot.org/wpf"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:combination1.controls"
+             mc:Ignorable="d" Height="450" Width="470">
+    <Grid Margin="0,0,-195.667,-35">
+        <ComboBox Loaded="ComboBox_Loaded" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="49,34,0,0"/>
+        <oxy:PlotView Model="{Binding MyModel}" Margin="8,184,510,150"/>
+        <oxy:PlotView Model="{Binding CorelatedModel}" Margin="158,184,357.667,150"/>
+        <oxy:PlotView Model="{Binding RegModel}" Margin="312,132,212.667,202" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.367">
+            <oxy:PlotView.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="52.577"/>
+                </TransformGroup>
+            </oxy:PlotView.RenderTransform>
+        </oxy:PlotView>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="216,33,0,0" TextWrapping="Wrap" Background="LightGray" BorderThickness="2,2,2,2" BorderBrush="Black" Text="Enter dll path" VerticalAlignment="Top" Width="120" Name="dllTextBox"/>
+        <Button Content="Load" HorizontalAlignment="Left" Margin="265,73,0,0" VerticalAlignment="Top" Width="75" BorderThickness="2,2,2,2" BorderBrush="Black" Name="dllButton" Click="dllButton_Click"/>
+        <DataGrid HorizontalAlignment="Left" Height="79" Margin="19,100,0,0" VerticalAlignment="Top" Width="442" Name="dllDataGrid">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="LightGreen"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="time" Binding="{Binding time}" Width="50"/>
+                <DataGridTextColumn Header="feature1"  Binding="{Binding feature1}" Width="*"/>
+                <DataGridTextColumn Header="feature2" Binding="{Binding feature2}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox HorizontalAlignment="Left" Height="21" Margin="50,74,0,0" TextWrapping="Wrap" Text="no dll was upload" VerticalAlignment="Top" BorderThickness="2,2,2,2" BorderBrush="Black" Width="123" Name="algoTextBox" Background="Red" TextChanged="algoTextBox_TextChanged"/>
+    </Grid>
+</UserControl>
