@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 namespace combination1
 {
     // king ido
+    // yobe
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
