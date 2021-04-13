@@ -15,7 +15,6 @@ using System.Windows.Shapes;
 
 namespace combination1
 {
-    //IDO
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
