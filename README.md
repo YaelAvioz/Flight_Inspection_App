@@ -60,7 +60,7 @@ In order to set up the connection with our program.
 
 ### Links
 ReadMe of the Main classes - MainClassesReadme
-The video of the program - need to download before watching.
+The video of the program (Media/FG_Video.mp4) - need to download before watching.
 ### Video
 Watch With Sound gif of the video
 ![](Media/FG_gif.gif)
