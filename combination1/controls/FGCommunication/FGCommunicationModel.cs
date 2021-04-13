@@ -205,7 +205,7 @@ namespace combination1.controls
 
                     try
                     {
-                        if(open == false)
+                        if (open == false)
                         {
                             fgs = new Socket(ips.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
                             fgs.Connect(ipes);
@@ -222,9 +222,9 @@ namespace combination1.controls
 
                         int b = fgs.Send(Encoding.ASCII.GetBytes(csvr.getRowString(this.currentIndex) + "\n"));
                     }
-                    catch(Exception e) { }
-                 
-                }
+                    catch (Exception e) { Console.Write(e.ToString()); }//update labed - write error connecting }
+
+                    }
             }
         }
 
