@@ -20,6 +20,7 @@ namespace combination1.controls
         // add anomaly detector 
 
         // properties
+        // values to generate a chosen graph.
         public List<double> GraphCol
         {
             get { return this.graphCol; }
@@ -35,6 +36,7 @@ namespace combination1.controls
             }
         }
 
+        // values to generate a  Correlate graph.
         public List<double> CorrelativeGraphCol
         {
             get { return this.correlativeGraphCol; }
@@ -50,6 +52,7 @@ namespace combination1.controls
             }
         }
 
+        
         public Line RegLine
         {
             get { return this.regLine; }
@@ -111,6 +114,8 @@ namespace combination1.controls
             return this.reader.getRow(index);
         }
 
+
+        // indicate the currnet line's index.
         private int currentIndex = 0;
         public int CurrentIndex
         {

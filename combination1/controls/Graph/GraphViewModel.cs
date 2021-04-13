@@ -92,7 +92,7 @@ namespace combination1.controls
                 {
                     this.graphIndex = value;
                     this.model.setGraphCol(value);
-
+                    // update all graphs according to the time slider value.
                     originalGraphUpdate();
                     correlatedGraphUpdate();
                     regLineGraphUpdate();
@@ -114,7 +114,7 @@ namespace combination1.controls
             return this.model.getFeildsNames().GetRange(0, 42);
         }
 
-        //filling the data of the graph
+        //filling the data of the chosen graph.
         public void addDataFirstGraph()
         {
             if (this.originalFs != null)
@@ -128,6 +128,7 @@ namespace combination1.controls
             }
         }
 
+        //filling the data of the Correlated graph.
         public void addDataCorelatedGraph()
         {
             if (this.corelFs != null)
@@ -141,6 +142,7 @@ namespace combination1.controls
             }
         }
 
+        //filling the data of the regression line.
         public void addPointsRegGraph()
         {
             int colSize = this.VM_GraphCol.Count();
@@ -215,6 +217,7 @@ namespace combination1.controls
             this.regFs = new FunctionSeries(x => this.model.RegLine.getA() * x + this.model.RegLine.getB(), -10000, 10000, 0.5);
             this.RegModel.Series.Add(this.regFs);
             //points annotation
+            // update the annotation to present  the last 30 points 
             addPointsRegGraph();
             this.RegModel.InvalidatePlot(true);
         }

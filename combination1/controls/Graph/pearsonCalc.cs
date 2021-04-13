@@ -140,6 +140,7 @@ namespace combination1.controls
             this.a = a;
             this.b = b;
         }
+        // return the function value according to given x value.
         public double f(double x)
         {
             return this.a * x + this.b;
@@ -152,6 +153,7 @@ namespace combination1.controls
         {
             return this.b;
         }
+        //Comparison method.
         public bool cmp(Line l)
         {
             if (this.a == l.getA() && this.b == l.getB())

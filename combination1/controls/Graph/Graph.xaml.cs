@@ -42,6 +42,7 @@ namespace combination1.controls
 
         }
 
+        // present the 42 features of the Flight report.
         private void ComboBox_Loaded(object sender, RoutedEventArgs e)
         {
             List<string> l = Gvm.getComboboxNames();
@@ -58,21 +59,20 @@ namespace combination1.controls
 
         private void dllButton_Click(object sender, RoutedEventArgs e)
         {
+            
             //loading dynamicaly the dll file
             IntPtr pDll = NativeMethods.LoadLibrary(@dllTextBox.Text);
 
-            //if (pDll == IntPtr.Zero)
 
             //setting pointer to the method in the dll according to interface
             IntPtr pAddressOfFunctionToCall = NativeMethods.GetProcAddress(pDll, "findAnomalies");
-
-            //if(pAddressOfFunctionToCall == IntPtr.Zero)
 
             //creating the function from the dll
             findAnomalies fa = (findAnomalies)Marshal.GetDelegateForFunctionPointer(
             pAddressOfFunctionToCall,
             typeof(findAnomalies));
 
+            // call the dll function 
             fa();
 
             bool result = NativeMethods.FreeLibrary(pDll);
@@ -99,6 +99,7 @@ namespace combination1.controls
             {
                 if (line.CompareTo("Done.") != 0)
                 {
+                    // separate the line to the matching fields.
                     dollarIndex = line.IndexOf('$');
                     spaceIndex = line.IndexOf(' ');
                     lastSpaceIndex = line.LastIndexOf(" ");

@@ -119,6 +119,7 @@ namespace combination1.controls
                     catch (Exception e) {
                         if(messageTimeout == false)
                         {
+                            Console.Write(e.ToString());
                             this.StatusText = "Note:Press 'Fly!' on the FlightGear window to start loading the flight simulation.";
                             messageTimeout = true;
                             //wait 10 seconds and then show later
@@ -147,7 +148,7 @@ namespace combination1.controls
                     fgs.Shutdown(SocketShutdown.Both);
                     fgs.Close();
                 }
-                catch(Exception e) { Console.WriteLine(rowNum.ToString()); }
+                catch(Exception e) { Console.Write(e.ToString()); }
             }
 
             //closing the FG window
