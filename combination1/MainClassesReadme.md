@@ -94,6 +94,6 @@ the view binds suitables wpf objects to the viewmodel properties and binds.
     - In this component, all the communication with the "FlightGear" app is happening. As our program is launching the FG app menu is launching as well, and after setting the settings for our program in the FG app(see README) the user can press "Fly!" and start loading the flight visual simulation on the FG window.
     - While the FG is loading, the user can decide to start the simulation and by that all the components will react regularly instead of the FG which is loading. When loading, the visual flight simulation on the FG app will start from the current point that all the components are on.
     - Notes: 1) By pressing the "Exit" button on the main window - the FG window will also close with the main window.
-          2 )Tip: For better preformence - Wait 5 seconds after pressing "Fly!" on the FG window before starting the simulation - in order the connection to complete.
+          2 )Tip: For better preformence - Wait 5 seconds after pressing "Fly!" on the FG window before starting the simulation - in order for the connection to complete.
     
     ![flightgear](https://user-images.githubusercontent.com/72969386/114574623-13fd9700-9c82-11eb-81ca-4381ad88b40e.png)
