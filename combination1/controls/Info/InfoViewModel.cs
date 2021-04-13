@@ -10,11 +10,9 @@ using System.Windows;
 
 namespace combination1.controls
 {
+    //Flight information model
     class infoViewModel : INotifyPropertyChanged
     {
-        /// <summary>
-        /// Initializes a new instance of the MainViewModel class.
-        /// </summary>
         private infoModel m;
         public infoViewModel(infoModel m)
         {
@@ -25,86 +23,6 @@ namespace combination1.controls
                 {
                     NotifyPropertyChanged("VM_" + e.PropertyName);
                 };
-        }
-
-        public double VM_ElipseTop
-        {
-            get
-            {
-                return m.ElipseTop;
-
-            }
-        }
-
-        public double VM_ElipseLeft
-        {
-            get
-            {
-                return m.ElipseLeft;
-            }
-
-        }
-
-        public double VM_RectTop
-        {
-            get
-            {
-                return m.RectTop;
-            }
-
-        }
-
-        public double VM_RectLeft
-        {
-            get
-            {
-                return m.RectLeft;
-            }
-
-        }
-
-        public double VM_Rect2Top
-        {
-            get
-            {
-                return m.Rect2Top;
-            }
-
-        }
-
-        public double VM_Rect2Left
-        {
-            get
-            {
-                return m.Rect2Left;
-            }
-
-        }
-
-        public double VM_Rect3Top
-        {
-            get
-            {
-                return m.Rect3Top;
-            }
-
-        }
-
-        public double VM_Rect3Left
-        {
-            get
-            {
-                return m.Rect3Left;
-            }
-
-        }
-
-        public string VM_Test
-        {
-            get
-            {
-                return m.Test;
-            }
         }
 
         public string VM_SpeedValue
@@ -128,9 +46,7 @@ namespace combination1.controls
             get
             {
                 return this.m.PitchSlider;
-
             }
-           
         }
 
         public Thickness VM_RollSlider
@@ -140,7 +56,6 @@ namespace combination1.controls
                 return this.m.RollSlider;
 
             }
-
         }
 
         public Thickness VM_YawSlider
@@ -148,9 +63,7 @@ namespace combination1.controls
             get
             {
                 return this.m.YawSlider;
-
             }
-
         }
 
         public Thickness VM_Circle
@@ -159,7 +72,6 @@ namespace combination1.controls
             {
                 return this.m.Circle;
             }
-            
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -169,11 +81,6 @@ namespace combination1.controls
             {
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
             }
-        }
-
-        public void start()
-        {
-            this.m.start();
         }
 
         public void setTimeSliderModel(timeSliderModel o)

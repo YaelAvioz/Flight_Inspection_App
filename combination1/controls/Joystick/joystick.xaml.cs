@@ -16,9 +16,7 @@ using System.Threading;
 
 namespace combination1.controls
 {
-    /// <summary>
-    /// Interaction logic for joystick.xaml
-    /// </summary>
+    //Joystick view
     public partial class joystick : UserControl
     {
         private joystickViewModel vm;

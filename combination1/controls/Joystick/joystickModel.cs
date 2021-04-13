@@ -9,22 +9,12 @@ using System.Windows.Media;
 
 namespace combination1.controls
 {
+    //Joystick model
     class joystickModel : INotifyPropertyChanged
     {
         CSVReader csvr = new CSVReader();
 
-        /* test for the joystick
-        //2174 = numOfRows
-        for(int i = 0; i < 2174; i++){
-            this.CurrentTime = i;
-            moveThrottle();
-            moveRudder()
-            moveVertically()
-            moveHorizontally()
-            
-            //sleep 20 miliseconds
-        }
-        */
+        //all the numbers in the class are starting the values according to the screen 
 
         private int currentIndex = 0;
         public int CurrentIndex
@@ -40,6 +30,7 @@ namespace combination1.controls
                     this.currentIndex = value;
                     NotifyPropertyChanged("CurrentIndex");
 
+                    //updates according to the updated data
                     moveHorizontally();
                     moveRudder();
                     moveThrottle();
@@ -53,9 +44,7 @@ namespace combination1.controls
         {
             get
             {
-
                 return elipseTop;
-
             }
             set
             {
@@ -72,9 +61,7 @@ namespace combination1.controls
         {
             get
             {
-
                 return elipseLeft;
-
             }
             set
             {
@@ -91,9 +78,7 @@ namespace combination1.controls
         {
             get
             {
-
                 return rect1Top;
-
             }
             set
             {
@@ -110,9 +95,7 @@ namespace combination1.controls
         {
             get
             {
-
                 return rect1Left;
-
             }
             set
             {
@@ -129,9 +112,7 @@ namespace combination1.controls
         {
             get
             {
-
                 return rect2Top;
-
             }
             set
             {
@@ -148,9 +129,7 @@ namespace combination1.controls
         {
             get
             {
-
                 return rect2Left;
-
             }
             set
             {
@@ -158,23 +137,6 @@ namespace combination1.controls
                 {
                     rect2Left = value;
                     NotifyPropertyChanged("Rect2Left");
-                }
-            }
-        }
-
-        private string test;
-        public string Test
-        {
-            get
-            {
-                return test;
-            }
-            set
-            {
-                if (this.test != value)
-                {
-                    test = value;
-                    NotifyPropertyChanged("Test");
                 }
             }
         }
@@ -188,7 +150,8 @@ namespace combination1.controls
             }
         }
 
-        public void moveThrottle()//check if not top
+        //the sliders movement
+        public void moveThrottle()
         {
             this.Rect1Top = 87 + ((138.0) * csvr.getRow(CurrentIndex)[csvr.getFieldsNodes().IndexOf("/controls/engines/engine[0]/throttle")]);
         }
@@ -198,6 +161,7 @@ namespace combination1.controls
             this.Rect2Left = 368 + ((80.0) * csvr.getRow(CurrentIndex)[csvr.getFieldsNodes().IndexOf("/controls/flight/rudder")]);
         }
 
+        //the joystick movement
         public void moveVertically()
         {
             this.ElipseTop = 107 + ((-50.0) * csvr.getRow(CurrentIndex)[csvr.getFieldsNodes().IndexOf("/controls/flight/elevator")]);
@@ -206,15 +170,6 @@ namespace combination1.controls
         public void moveHorizontally()
         {
             this.ElipseLeft = 143 + ((50.0) * csvr.getRow(CurrentIndex)[csvr.getFieldsNodes().IndexOf("/controls/flight/aileron[0]")]);
-        }
-
-        public void start()
-        {
-            for (int i = 0; i < 2174; i++)
-            {
-                this.CurrentIndex = i;
-                System.Threading.Thread.Sleep(20);
-            }
         }
 
         public void setTimeSliderModel(timeSliderModel o)

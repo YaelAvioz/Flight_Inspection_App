@@ -10,6 +10,7 @@ using System.Windows;
 
 namespace combination1.controls
 {
+    //Flight information model
     class infoModel : INotifyPropertyChanged
     {
         private Thickness pitchSlider;
@@ -19,10 +20,13 @@ namespace combination1.controls
         private int currentIndex;
         CSVReader csvr = new CSVReader();
 
+        //all the numbers in the class are starting the values according to the screen 
+
         public infoModel()
         {
             currentIndex = 0;
 
+            //setting the starting values
             this.pitchSlider = new Thickness();
             pitchSlider.Bottom = 0;
             pitchSlider.Left = 168;
@@ -48,6 +52,7 @@ namespace combination1.controls
             circle.Top = 105;
         }
 
+        //current line - from the slider
         public int CurrentIndex
         {
             get
@@ -61,181 +66,13 @@ namespace combination1.controls
                     this.currentIndex = value;
                     NotifyPropertyChanged("CurrentIndex");
 
+                    //updates according to the updated data
                     setSpeed();
                     setHeight();
                     movePitch();
                     moveRoll();
                     moveYaw();
                     moveCircle();
-                }
-            }
-        }
-
-        private double elipseTop = 1;
-        public double ElipseTop
-        {
-            get
-            {
-
-                return elipseTop;
-
-            }
-            set
-            {
-                if (this.elipseTop != value)
-                {
-                    elipseTop = value;
-                    NotifyPropertyChanged("ElipseTop");
-                }
-            }
-        }
-
-        private double elipseLeft = 1;
-        public double ElipseLeft
-        {
-            get
-            {
-
-                return elipseLeft;
-
-            }
-            set
-            {
-                if (this.elipseLeft != value)
-                {
-                    elipseLeft = value;
-                    NotifyPropertyChanged("ElipseLeft");
-                }
-            }
-        }
-
-        private double rectTop = 192;
-        public double RectTop
-        {
-            get
-            {
-
-                return rectTop;
-
-            }
-            set
-            {
-                if (this.rectTop != value)
-                {
-                    rectTop = value;
-                    NotifyPropertyChanged("RectTop");
-                }
-            }
-        }
-
-        private double rectLeft = 122;
-        public double RectLeft
-        {
-            get
-            {
-
-                return rectLeft;
-
-            }
-            set
-            {
-                if (this.rectLeft != value)
-                {
-                    rectLeft = value;
-                    NotifyPropertyChanged("RectLeft");
-                }
-            }
-        }
-
-        private double rect2Top = 542;
-        public double Rect2Top
-        {
-            get
-            {
-
-                return rect2Top;
-
-            }
-            set
-            {
-                if (this.rect2Top != value)
-                {
-                    rect2Top = value;
-                    NotifyPropertyChanged("Rect2Top");
-                }
-            }
-        }
-
-        private double rect2Left = 400;
-        public double Rect2Left
-        {
-            get
-            {
-
-                return rect2Left;
-
-            }
-            set
-            {
-                if (this.rect2Left != value)
-                {
-                    rect2Left = value;
-                    NotifyPropertyChanged("Rect2Left");
-                }
-            }
-        }
-
-        private double rect3Top = 542;
-        public double Rect3Top
-        {
-            get
-            {
-
-                return rect3Top;
-
-            }
-            set
-            {
-                if (this.rect3Top != value)
-                {
-                    rect3Top = value;
-                    NotifyPropertyChanged("Rect3Top");
-                }
-            }
-        }
-
-        private double rect3Left = 400;
-        public double Rect3Left
-        {
-            get
-            {
-
-                return rect3Left;
-
-            }
-            set
-            {
-                if (this.rect3Left != value)
-                {
-                    rect3Left = value;
-                    NotifyPropertyChanged("Rect3Left");
-                }
-            }
-        }
-
-        private string test;
-        public string Test
-        {
-            get
-            {
-                return test;
-            }
-            set
-            {
-                if (this.test != value)
-                {
-                    test = value;
-                    NotifyPropertyChanged("Test");
                 }
             }
         }
@@ -376,7 +213,7 @@ namespace combination1.controls
             this.PitchSlider = t;
         }
 
-        public void moveRoll() //TODO : update location
+        public void moveRoll()
         {
             Thickness t = new Thickness();
             t.Bottom = 0;
@@ -430,18 +267,6 @@ namespace combination1.controls
             this.Circle = t;
         }
 
-        //compass
-        public void moveSN()
-        {
-            this.ElipseTop = 1 + ((60.0) * csvr.getRow(CurrentIndex)[1]);
-        }
-
-        public void moveWE()
-        {
-            this.ElipseLeft = 1 + ((60.0) * csvr.getRow(CurrentIndex)[0]);
-        }
-
-        //compass
         public void setHeight()
         {
             this.HeightValue = csvr.getRow(CurrentIndex)[csvr.getFieldsNodes().IndexOf("/position/altitude-ft")].ToString();
@@ -450,15 +275,6 @@ namespace combination1.controls
         public void setSpeed()
         {
             this.SpeedValue = csvr.getRow(CurrentIndex)[csvr.getFieldsNodes().IndexOf("/velocities/airspeed-kt")].ToString();
-        }
-
-        public void start()
-        {
-            for(int i = 0; i < 2174; i++)
-            {
-                this.CurrentIndex = i;
-                System.Threading.Thread.Sleep(20);
-            }
         }
 
         public void setTimeSliderModel(timeSliderModel o)

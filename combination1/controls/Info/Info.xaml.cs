@@ -16,9 +16,7 @@ using System.Threading;
 
 namespace combination1.controls
 {
-    /// <summary>
-    /// Interaction logic for Info.xaml
-    /// </summary>
+    //Flight information view
     public partial class Info : UserControl
     {
         private infoViewModel vm;
@@ -29,7 +27,6 @@ namespace combination1.controls
 
             InitializeComponent();
         }
-
 
         public void setTimeSliderModel(timeSliderModel o)
         {

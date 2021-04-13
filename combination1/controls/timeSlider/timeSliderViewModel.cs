@@ -10,6 +10,7 @@ using System.Windows.Media;
 
 namespace combination1.controls
 {
+    //Time Slider view model
     class timeSliderViewModel : INotifyPropertyChanged
     {
         private timeSliderModel m;
@@ -25,7 +26,7 @@ namespace combination1.controls
         }
 
         public double VM_CurrentSliderValue
-        {//add set, its two way
+        {
             get { return m.CurentSliderValue; }
             set { this.m.CurentSliderValue = value; }
         }

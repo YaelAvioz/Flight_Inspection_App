@@ -9,16 +9,15 @@ using System.Windows.Media;
 
 namespace combination1.controls
 {
+    //Time Slider model
     public class timeSliderModel : INotifyPropertyChanged
     {
-        //the images in the form.
         bool maxSliderValue = false;
         private const double nextIndexFactor = 5.0 / 1087.0;
         private const double regularSpeed = 50.0;
 
         public delegate void timeSliderDelgate(int index);
         public event timeSliderDelgate updateIndex;
-
 
         private ImageBrush pauseButtonBackground = null;
         public ImageBrush PauseButtonBackground
@@ -45,7 +44,8 @@ namespace combination1.controls
                     this.isPaused = value;
                     this.NotifyPropertyChanged("IsPaused");
 
-                   ImageBrush ib = new ImageBrush();
+                    //updating when pausing/resuming - changing the image of the button
+                    ImageBrush ib = new ImageBrush();
 
                     if (value == true)
                     {
@@ -57,7 +57,6 @@ namespace combination1.controls
                         ib.ImageSource = (ImageSource)new ImageSourceConverter().ConvertFromString(@"pause.png");
                     }
 
-                    //UNABLE CHANGES TO THE IMAGE - IMPORTANT
                     ib.Freeze();
                     PauseButtonBackground = ib;
                 }
@@ -136,19 +135,14 @@ namespace combination1.controls
             }
         }
 
+        //the starting method
         public void start()
         {
-            //init the backgrounds
-           // ibp.ImageSource = (ImageSource)new ImageSourceConverter().ConvertFromString("C:/Users/magshimim/source/repos/scrollBar/scrollBar/pause.png");
-           // ibr.ImageSource = (ImageSource)new ImageSourceConverter().ConvertFromString("C:/Users/magshimim/source/repos/scrollBar/scrollBar/resume.jpg");
-            
             //pauses at the start
             pause();
             try
             {
-               // this.CurentSliderValue = 0.0;
-                //updateTime();
-
+                //handeling the slider - and counting pauses/changing of speed
                 while (true)
                 {
                     
@@ -170,9 +164,9 @@ namespace combination1.controls
 
         }
 
+        //updating the presented time according to the slider value
         public void updateTime()
         {
-            //num of lines(2174)/lines per second(20)
             double maxSecs = 108.7;
             double ratio = (this.curentSliderValue / 10.0);
             int totalSec = (int)(ratio * maxSecs);
@@ -209,22 +203,17 @@ namespace combination1.controls
                 maxSliderValue = false;
             }
 
-            //if (IsPaused == false)
-           // {
-                //calculate the new line, sending the new line
-                double currentIndex = newValue * 217.4;
-                int ind = (int)currentIndex;
-                if (ind == 2174)
-                {
-                    ind--;
-                    maxSliderValue = true;
-                    pause();
-                }
+            //calculate the new line, sending the new line
+            double currentIndex = newValue * 217.4;
+            int ind = (int)currentIndex;
+            if (ind == 2174)
+            {
+                ind--;
+                maxSliderValue = true;
+                pause();
+            }
 
-                this.CurrentIndex = ind;
-                //notify all models that use the index
-
-            //}
+            this.CurrentIndex = ind;
         }
 
         public void handlePauseResumeClick()

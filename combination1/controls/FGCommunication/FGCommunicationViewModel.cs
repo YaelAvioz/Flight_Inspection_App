@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace combination1.controls
 {
+    //FG communication view model
     class FGCommunicationViewModel : INotifyPropertyChanged
     {
         FGCommunicationModel m;
@@ -27,16 +28,6 @@ namespace combination1.controls
             {
                 return this.m.StatusText;
             }
-        }
-
-        public void sendFlightData()
-        {
-            this.m.sendFlightData();
-        }
-
-        public void start()
-        {
-            this.m.start();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

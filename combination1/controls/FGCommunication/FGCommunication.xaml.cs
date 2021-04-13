@@ -14,12 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Threading;
 
-
 namespace combination1.controls
 {
-    /// <summary>
-    /// Interaction logic for FGCommunication.xaml
-    /// </summary>
+    //FG communication view
     public partial class FGCommunication : UserControl
     {
         private FGCommunicationViewModel vm;
@@ -31,19 +28,13 @@ namespace combination1.controls
             vm = new FGCommunicationViewModel(new FGCommunicationModel());
             this.DataContext = this.vm;
         }
-
-        private void b_click(object sender, RoutedEventArgs e)
-        {
-            Thread thr = new Thread(new ThreadStart(this.vm.sendFlightData));
-            thr.Start();
-
-        }
-
+        
         public void setTimeSliderModel(timeSliderModel o)
         {
             this.vm.setTimeSliderModel(o);
         }
 
+        //closes the FG window
         public void exit()
         {
             this.vm.exit();

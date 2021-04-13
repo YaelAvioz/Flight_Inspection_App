@@ -9,24 +9,12 @@ using System.Windows.Media;
 
 namespace combination1.controls
 {
+    //Joystick model
     class joystickViewModel : INotifyPropertyChanged
     {
-        /// <summary>
-        /// Initializes a new instance of the MainViewModel class.
-        /// </summary>
         private joystickModel m;
         public joystickViewModel(joystickModel m)
         {
-            ////if (IsInDesignMode)
-            ////{
-            ////    // Code runs in Blend --> create design time data.
-            ////}
-            ////else
-            ////{
-            ////    // Code runs "for real"
-            ////}
-            ///
-
             this.m = m;
 
             this.m.PropertyChanged +=
@@ -34,12 +22,6 @@ namespace combination1.controls
                 {
                     NotifyPropertyChanged("VM_" + e.PropertyName);
                 };
-
-            //List<string> cols = cSV.getFieldsNodes();
-            //foreach (var item in cols)
-            //{
-            //    List<string> rows=cSV.
-            //}
         }
 
         public double VM_ElipseTop
@@ -96,14 +78,6 @@ namespace combination1.controls
           
         }
 
-        public string VM_Test
-        {
-            get
-            {
-                return m.Test;
-            }
-        }
-
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)
         {
@@ -111,11 +85,6 @@ namespace combination1.controls
             {
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
             }
-        }
-
-        public void start()
-        {
-            this.m.start();
         }
 
         public void setTimeSliderModel(timeSliderModel o)
