@@ -59,8 +59,9 @@ In order to set up the connection with our program.
 
 
 ### Links
-ReadMe of the Main classes - MainClassesReadme
-The video of the program (Media/FG_Video.mp4) - need to download before watching.
+- ReadMe of the Main classes - MainClassesReadme
+- The video of the program (Media/FG_Video.mp4) - need to download before watching.
+- The link to the FlightGear web site - https://www.flightgear.org/
 ### Video
 Watch With Sound gif of the video
 ![](Media/FG_gif.gif)
