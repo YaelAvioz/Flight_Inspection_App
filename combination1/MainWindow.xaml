@@ -11,7 +11,7 @@
         <Controls:Info x:Name="Info" Margin="476,-28,-476,28"/>
         <Controls:joystick x:Name="Joystick" Margin="-290,302,231,-292"/>
         <Controls:Graph x:Name="Graph" Margin="0,19,410,250" ></Controls:Graph>
-        <!--Controls:FGCommunication x:Name="FGC" Margin="128,292,-128,-292"/-->
+        <Controls:FGCommunication x:Name="FGC" Margin="128,292,-128,-292"/>
         <Controls:timeSlider x:Name="timeSlider" Margin="142,403,-142,-404"/>
     </Grid>
 </Window>
