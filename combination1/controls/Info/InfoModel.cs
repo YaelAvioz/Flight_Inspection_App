@@ -396,7 +396,7 @@ namespace combination1.controls
             this.RollSlider = t;
         }
 
-        public void moveYaw() //TODO : update location
+        public void moveYaw()
         {
             Thickness t = new Thickness();
             t.Bottom = 0;
@@ -416,12 +416,12 @@ namespace combination1.controls
             this.YawSlider = t;
         }
 
-        public void moveCircle() //TODO : update location
+        public void moveCircle()
         {
             Thickness t = new Thickness();
             t.Bottom = 0;
             //for propoution on the slider
-            double deg = csvr.getRow(CurrentIndex)[csvr.getFieldsNodes().IndexOf("/orientation/heading-deg")];
+            double deg = (csvr.getRow(CurrentIndex)[csvr.getFieldsNodes().IndexOf("/orientation/heading-deg")])/(180/Math.PI);
           
             t.Left = (45 * Math.Sin(deg));
             t.Top = (45 * Math.Cos(deg));
@@ -431,12 +431,12 @@ namespace combination1.controls
         }
 
         //compass
-        public void moveSN() //TODO : update location
+        public void moveSN()
         {
             this.ElipseTop = 1 + ((60.0) * csvr.getRow(CurrentIndex)[1]);
         }
 
-        public void moveWE() //TODO : update location
+        public void moveWE()
         {
             this.ElipseLeft = 1 + ((60.0) * csvr.getRow(CurrentIndex)[0]);
         }

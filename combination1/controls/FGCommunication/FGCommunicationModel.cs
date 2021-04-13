@@ -151,7 +151,7 @@ namespace combination1.controls
             }
 
             //FG loaded
-            this.StatusText = "Flightgear loaded\nThe flight simulation can be seen at the FlightGear window!";
+            //this.StatusText = "Flightgear loaded\nThe flight simulation can be seen at the FlightGear window!";
         }
 
         public void start()
