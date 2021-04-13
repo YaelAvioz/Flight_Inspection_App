@@ -103,6 +103,19 @@ namespace combination1.controls
                     spaceIndex = line.IndexOf(' ');
                     lastSpaceIndex = line.LastIndexOf(" ");
                     time = line.Substring(0, spaceIndex);
+                    
+                    //converting row index to time
+                    double timeDouble = Convert.ToDouble(time);
+                    timeDouble = timeDouble / 217.4;
+                    double maxSecs = 108.7;
+                    double ratio = (timeDouble / 10.0);
+                    int totalSec = (int)(ratio * maxSecs);
+                    double currMin = (int)(totalSec / 60);
+                    double currSec = totalSec - (currMin * 60);
+                    string fmt = "00";
+                    string secStr = currSec.ToString();
+                    time = currMin.ToString() + ":" + currSec.ToString(fmt);
+
                     feature1 = line.Substring(spaceIndex + 1, dollarIndex - spaceIndex - 1);
                     feature2 = line.Substring(dollarIndex + 1);
                     Anomalyreport ar = new Anomalyreport();

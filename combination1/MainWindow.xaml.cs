@@ -32,7 +32,7 @@ namespace combination1
             this.Info.setTimeSliderModel(this.timeSlider.getTimeSliderModel());
             this.Joystick.setTimeSliderModel(this.timeSlider.getTimeSliderModel());
             this.Graph.setTimeSliderModel(this.timeSlider.getTimeSliderModel());
-            this.FGC.setTimeSliderModel(this.timeSlider.getTimeSliderModel());
+            //this.FGC.setTimeSliderModel(this.timeSlider.getTimeSliderModel());
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
