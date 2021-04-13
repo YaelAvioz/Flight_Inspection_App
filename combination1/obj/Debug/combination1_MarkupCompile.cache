@@ -4,21 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\omria\Source\Repos\AdvancedPrograming2FG\combination1\obj\Debug\
+C:\Users\magshimim\source\repos\combination1\combination1\obj\Debug\
 combination1
 none
 false
 DEBUG;TRACE
-C:\Users\omria\Source\Repos\AdvancedPrograming2FG\combination1\App.xaml
+C:\Users\magshimim\source\repos\combination1\combination1\App.xaml
 6-1738857078
 
 231836616505
-<<<<<<< HEAD
 17-797407636
-=======
-17-55934927
->>>>>>> 0b3816cd7c7128fb2a8e8a346bba7a693a897fb5
 controls\FGCommunication\FGCommunication.xaml;controls\Graph\Graph.xaml;controls\Info\Info.xaml;controls\Joystick\joystick.xaml;controls\timeSlider\timeSlider.xaml;MainWindow.xaml;
 
-False
+True
 
