@@ -52,5 +52,10 @@ namespace combination1.controls
         {
             this.m.setTimeSliderModel(o);
         }
+
+        public void exit()
+        {
+            this.m.exit();
+        }
     }
 }

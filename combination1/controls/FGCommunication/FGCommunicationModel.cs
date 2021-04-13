@@ -20,7 +20,6 @@ namespace combination1.controls
         private CSVReader csvr;
         private int currentIndex = 0;
         Process fgp;
-        timeSliderModel observable;
         Socket fgs;
         IPAddress ips;
         IPEndPoint ipes;
@@ -29,12 +28,7 @@ namespace combination1.controls
         {
             csvr = new CSVReader();
             currentIndex = 0;
-
-            observable = new timeSliderModel();
-            observable.updateIndex += delegate (int index)
-            {
-                this.CurrentIndex = index;
-            };            fgp = new Process();
+                        fgp = new Process();
             try
             {
                 //check with the user for other path(assumed that it is on the Desktop
@@ -192,7 +186,7 @@ namespace combination1.controls
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
             }
         }
-        bool open = false;
+        bool open = false, messageTimeout = false;
         public int CurrentIndex
         {
             get { return this.currentIndex; }
@@ -222,10 +216,36 @@ namespace combination1.controls
 
                         int b = fgs.Send(Encoding.ASCII.GetBytes(csvr.getRowString(this.currentIndex) + "\n"));
                     }
-                    catch (Exception e) { Console.Write(e.ToString()); }//update labed - write error connecting }
-
+                    catch (Exception e) {
+                        if(messageTimeout == false)
+                        {
+                            this.StatusText = "Note:Press 'Fly!' on the FlightGear window to start loading the flight simulation.";
+                            messageTimeout = true;//wait 10 seconds and then show later
+                            Thread thr = new Thread(new ThreadStart(messageShowingTimeout));
+                            thr.Start();
+                        }
                     }
+                }
             }
+        }
+
+        public void messageShowingTimeout()
+        {
+            System.Threading.Thread.Sleep(10000);
+            messageTimeout = false;
+        }
+
+        public void exit()
+        {
+            if (fgs != null)
+            {
+                //closing the connection with the FG
+                fgs.Shutdown(SocketShutdown.Both);
+                fgs.Close();
+            }
+
+            //closing the main window and the FG window
+            fgp.Kill();
         }
 
         public void setTimeSliderModel(timeSliderModel o)

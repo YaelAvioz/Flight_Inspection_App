@@ -22,6 +22,7 @@ namespace combination1.controls
     /// 
     public partial class timeSlider : UserControl
     {
+        Thread t;
         timeSliderViewModel vm;
         public timeSlider()
         {
@@ -146,7 +147,7 @@ namespace combination1.controls
             //the regular speed - 20 lines per second
             this.scb.ItemsSource = new String[] { "X0.5", "X1", "X2" };
 
-            Thread t = new Thread(new ThreadStart(this.vm.start));
+            t = new Thread(new ThreadStart(this.vm.start));
             t.Start();
         }
 
