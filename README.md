@@ -56,7 +56,7 @@ Then, we called the method and finally released the file. Calling the method cau
 --generic=socket,in,20,127.0.0.1,5400,tcp,playback_small 
 --fdm=null
 --generic=socket,out,20,127.0.0.1,6400,tcp,playback_small
-In order to set up the connection with our program.
+- In order to set up the connection with our program.
 
 ![FGprops](https://user-images.githubusercontent.com/72969386/114606209-ad897080-9ca3-11eb-8d3e-c43754e8418a.png)
 
