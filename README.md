@@ -5,6 +5,8 @@ In this project, we built a GUI (WPF application), which allows us to track the 
 ### Emphasis for examiner
 - In the CSV file when there were columns with the same name, we added the '2' character to the duplicate column name's when we put it in the dictionary, so that the previous entries would not be overwritten.
 - In the display of the original and correlative graphs the ranges are dynamically set according to the entered values, while in the regression line graph we set a static range to support a comfortable display of as many features as possible combined with the last 30 dots marked in blue
+- By pressing the "Exit" button on the main window - the FG window will also close with the main window.
+- Tip: For better preformence - Wait 5 seconds after pressing "Fly!" on the FG window before starting the simulation - in order for the connection to complete.
 
 - #### dll asumptions
   - The user needs to enter a full path of the dll file to the dedicated window in the application
@@ -57,7 +59,6 @@ Then, we called the method and finally released the file. Calling the method cau
 In order to set up the connection with our program.
 
 ![FGprops](https://user-images.githubusercontent.com/72969386/114606209-ad897080-9ca3-11eb-8d3e-c43754e8418a.png)
-
 
 ### Links
 - ReadMe of the Main classes - [MainClassesReadme](combination1/MainClassesReadme.md)
